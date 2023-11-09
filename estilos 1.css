@@ -73,7 +73,7 @@ header{
 
 .dos{
     background-color: #F2F2F2;
-    height: 1000px;
+    height: 1100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +83,7 @@ header{
     padding-right: 20%;
 }
 .aptitudes{
-    width: 50%;
+    width: 70%;
 }
 .tech-list{
     display: flex;
