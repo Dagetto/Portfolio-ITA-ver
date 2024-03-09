@@ -1,8 +1,9 @@
-body{
+body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
-header{
+
+header {
     height: 65px;
     background-color: #0c5df3;
     background-image: url("backround 2.jpeg");
@@ -11,15 +12,18 @@ header{
     align-items: flex-start;
     padding-left: 25px;
 }
-.cara{
+
+.cara {
     border-radius: 1000px;
     height: 300px;
 }
-.lenguge-selector{
+
+.lenguge-selector {
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 .language-selector a {
     display: inline-block;
     padding: 10px;
@@ -28,23 +32,24 @@ header{
     border-radius: 5px;
     margin: 5px;
 }
-  .language-selector a.active {
+
+.language-selector a.active {
     background-color: #333;
     color: #fff;
 }
-.uno{
+
+.uno {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background-color: #09275e;
+    background: linear-gradient(90deg, #09275e, rgba(9, 39, 94, 0.5));
     color: white;
     background-image: url("backround image.jpg");
-    /* padding-top: 10%; */
 }
 
-.caja-central{
+.caja-central {
     margin-top: 10%;
     width: 50%;
     display: flex;
@@ -53,7 +58,8 @@ header{
     overflow: hidden;
     height: 50%;
 }
-.caja-cara{
+
+.caja-cara {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +67,8 @@ header{
     background-color: #022f83;
     background-image: url("backround image.jpg");
 }
-.caja-presentacion{
+
+.caja-presentacion {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,34 +78,46 @@ header{
     padding: 10px;
 }
 
-.dos{
-    background-color: #F2F2F2;
-    height: 1200px;
+.dos {
+    background: linear-gradient(90deg, #909ff3, #022f83);
+    /* Difuminado de colores gris/azul */
+    height: 1100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #303030;
-    padding-left: 20%;
-    padding-right: 20%;
+    color: white;
+    /* Cambiamos el color del texto a blanco para mayor contraste */
+    text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5), -1px 1px 2px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 10%;
+    /* Reducimos el espacio de los lados para mayor armonía */
+    padding-right: 10%;
 }
-.aptitudes{
+
+.dos a {
+    color: white;
+}
+
+.aptitudes {
     width: 70%;
 }
-.tech-list{
+
+.tech-list {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
 }
 
-.tech{
-    height: 90px;
+.tech {
+    height: 130px;
     border-radius: 50px;
+    background-color: white;
+    /* Establecemos un fondo blanco para las imágenes */
 }
 
-.tres{
+.tres {
     background-color: #022f83;
-    height: 600px;
+    height: 800px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -106,84 +125,147 @@ header{
     color: #F2F2F2;
     background-image: url("backround 2.jpeg");
 }
-.proyectos{
+
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 50px;
     width: 60%;
-    display: flex;
-    justify-content: space-between;
 }
-.card{
+
+.card {
     text-align: center;
-    width: 30%;
     border: solid #F2F2F2 1px;
     border-radius: 10px;
+    margin: 20px;
     padding: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex: 0 0 230px;
+    /* Fuerza el ancho fijo de las tarjetas */
 }
-.card img{
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    /* Añade una propiedad z-index para asegurar que la tarjeta en hover esté por encima de las demás */
+}
+
+
+.card img {
     width: 100%;
 }
-.card a, footer a {
+
+.card::after {
+    content: attr(data-description);
+    /* Agrega la descripción */
+    position: absolute;
+    /* Posiciona el elemento de manera absoluta */
+    top: 0;
+    /* Lo coloca al inicio de la tarjeta */
+    right: 100%;
+    /* Lo coloca a la izquierda de la tarjeta */
+    width: 100%;
+    /* Ancho igual al de la tarjeta */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo semitransparente */
+    color: white;
+    /* Texto blanco */
+    padding: 10px;
+    /* Espaciado interno */
+    box-sizing: border-box;
+    /* Incluye el relleno en el tamaño total */
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s ease;
+    /* Transición suave de la opacidad */
+}
+
+.card:hover::after {
+    opacity: 1;
+    /* Muestra la descripción cuando se pasa el cursor */
+}
+
+.card a,
+footer a {
     color: white;
 }
 
-.red-social{
-    height: 60px;
+.red-social {
+    height: 90px;
     background-color: #F2F2F2;
     border-radius: 10px;
 }
 
-footer{
+footer {
     background-color: #022f83;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     color: #F2F2F2;
-    height: 250px;
+    height: 200px;
 }
-.contacto{
+
+.contacto {
     width: 30%;
     display: flex;
     justify-content: center;
+    transition: transform 0.3s;
+    /* Agregamos una transición suave para el efecto de zoom */
+}
+/* Al pasar el cursor sobre el elemento .contacto, aplicamos un zoom */
+.contacto:hover {
+    transform: scale(1.1);
+    /* Aumentamos el tamaño en un 10% */
 }
 
 @media (max-width: 1000px) {
-    .caja-central{
+    .caja-central {
         width: 90%;
         height: 70%;
         flex-direction: column;
     }
-    .caja-cara{
+
+    .caja-cara {
         width: 100%;
         height: 50%;
     }
-    .caja-presentacion{
+
+    .caja-presentacion {
         width: 100%;
         height: 50%;
         align-items: flex-start;
     }
-    .aptitudes{
+
+    .aptitudes {
         width: auto;
     }
-    .dos{
+
+    .dos {
         height: auto;
         padding: 0 10px 10px 10px;
 
     }
-    .tres{
+
+    .tres {
         height: auto;
     }
-    .proyectos{
+
+    .proyectos {
         flex-direction: column;
         width: 100%;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 20px;
     }
-    .card{
+
+    .card {
         width: 80%;
         margin-top: 20px;
     }
-    .red-social{
+
+    .red-social {
         margin: 0 10px 0 10px;
     }
 }
